@@ -34,9 +34,12 @@ with open("syslog", "r") as file:
 				per_user[user] = [1,0]
 			else:
 				per_user[user][0] += 1
-syslog.close()
 
 # sort per_user alphabetically, and error by order of values
+
+per_user_sorted = sorted(per_user.items())
+error_sorted = sorted(error.items(), key = lambda error: error[1], reverse = True)
+
 # put sorted dictionaries into csv formats
 			
 			
