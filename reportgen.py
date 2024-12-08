@@ -41,6 +41,16 @@ per_user_sorted = sorted(per_user.items())
 error_sorted = sorted(error.items(), key = lambda error: error[1], reverse = True)
 
 # put sorted dictionaries into csv formats
+
+with open('error_message.csv', 'w') as file:
+	writer = csv.writer(file)
+	writer.writerow(['Error', 'Count'])
+	writer.writerows(error_sorted)
+with open('user_statistics.csv', 'w') as file:
+### todo: iterate through per_user_sorted, writerow['username', user[0], user[1]]. dic values 0 and 1
+	writer = csv.writer(file)
+	writer.writerow(['Username', 'INFO', 'ERROR'])
+	writer.writerows(per_user_sorted)
 			
 			
 """
