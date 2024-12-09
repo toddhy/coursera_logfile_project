@@ -47,10 +47,10 @@ with open('error_message.csv', 'w') as file:
 	writer.writerow(['Error', 'Count'])
 	writer.writerows(error_sorted)
 with open('user_statistics.csv', 'w') as file:
-### todo: iterate through per_user_sorted, writerow['username', user[0], user[1]]. dic values 0 and 1
 	writer = csv.writer(file)
 	writer.writerow(['Username', 'INFO', 'ERROR'])
-	writer.writerows(per_user_sorted)
+	for row in per_user_sorted:
+		writer.writerow([row[0], row[1][0], row[1][1]])
 			
 			
 """
